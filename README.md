@@ -1,5 +1,5 @@
 # Tweentoo
-An easy to use tween script for moving, rotating and scaling Node2D or Spatial nodes for the Godot engine.
+An easy to use tween script for moving, rotating and scaling Node2D or Spatial nodes for the Godot engine.<br/>
 You can watch a video about it here: ![Godot Tween Made Easy - Tweentoo](https://youtu.be/79pTFbRVaZI)
 
 ![Tweentoo Image](https://img.itch.zone/aW1hZ2UvMTEwMDExOC82MzQ0OTYwLnBuZw==/original/U4SfjI.png)
