@@ -8,98 +8,150 @@
 [node name="Main" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
+current = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, -9 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Tweentoo3D" type="Tween" parent="MeshInstance"]
+[node name="Tweentoo" type="Tween" parent="MeshInstance"]
 script = ExtResource( 1 )
-transition = 7
-
-[node name="Position3D" type="Position3D" parent="MeshInstance/Tweentoo3D"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.5, 0 )
-
-[node name="Position3D2" type="Position3D" parent="MeshInstance/Tweentoo3D"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1.5, 0 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5901, 2, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="Tweentoo3D" type="Tween" parent="MeshInstance2"]
-script = ExtResource( 1 )
-transition = 6
+reversed_change = true
+transition = 8
 easing = 1
 duration = 2.0
 
-[node name="Position3D" type="Position3D" parent="MeshInstance2/Tweentoo3D"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0 )
+[node name="Position3D" type="Position3D" parent="MeshInstance/Tweentoo"]
+transform = Transform( -0.121159, 0, -0.992633, -0.906378, 0.407725, 0.110631, 0.404721, 0.913105, -0.0493996, -4, 0, -8 )
 
-[node name="Position3D2" type="Position3D" parent="MeshInstance2/Tweentoo3D"]
-transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 5, 2, 0 )
+[node name="Position3D2" type="Position3D" parent="MeshInstance/Tweentoo"]
+transform = Transform( -0.717075, -0.651833, 0.246814, -0.58814, 1.89565, 3.29764, -0.680039, 0.576661, -0.452779, 0, -0.896904, -10.2697 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31003, -7.87528, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="Tweentoo3D" type="Tween" parent="MeshInstance3"]
-script = ExtResource( 1 )
-transition = 8
-duration_array = [ 1.0, 0.6, 0.6, 1.0 ]
-
-[node name="1" type="Position3D" parent="MeshInstance3/Tweentoo3D"]
-transform = Transform( 0.894568, 0, -0.446932, -0.409997, 0.398061, -0.82064, 0.177906, 0.917359, 0.356092, -4.81689, -2.46491, 0 )
-
-[node name="2" type="Position3D" parent="MeshInstance3/Tweentoo3D"]
-transform = Transform( -0.947025, 0.170953, 0.271879, 0, 0.846556, -0.5323, -0.321159, -0.504102, -0.80171, -3.85817, -0.485094, 0 )
-
-[node name="3" type="Position3D" parent="MeshInstance3/Tweentoo3D"]
-transform = Transform( 0.672586, 0, -0.740019, -0.303539, 0.912006, -0.27588, 0.674901, 0.410178, 0.613403, -2.24094, -1.26925, 0 )
-
-[node name="4" type="Position3D" parent="MeshInstance3/Tweentoo3D"]
-transform = Transform( 0.672586, 0, -0.740019, -0.303539, 0.912006, -0.27588, 0.674901, 0.410178, 0.613403, -2.24094, -8.16294, 0 )
+[node name="Position3D3" type="Position3D" parent="MeshInstance/Tweentoo"]
+transform = Transform( 0.566003, 0, 0.824403, 0.812102, 0.172101, -0.557558, -0.141881, 0.985079, 0.0974098, 4, -2, -8 )
 
 [node name="Screen" type="Node2D" parent="."]
 
+[node name="Back" type="Node" parent="Screen"]
+
+[node name="ColorRect" type="ColorRect" parent="Screen/Back"]
+margin_left = -14.0
+margin_top = -15.0
+margin_right = 1054.0
+margin_bottom = 145.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Screen/Back"]
+margin_left = 67.0536
+margin_top = 112.0
+margin_right = 107.054
+margin_bottom = 126.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Screen/Back"]
+margin_left = 190.054
+margin_top = 112.0
+margin_right = 230.054
+margin_bottom = 126.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Screen/Back"]
+margin_left = 299.054
+margin_top = 112.0
+margin_right = 339.054
+margin_bottom = 126.0
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Screen/Back"]
+margin_left = 404.054
+margin_top = 112.0
+margin_right = 444.054
+margin_bottom = 126.0
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Screen/Back"]
+margin_left = 507.054
+margin_top = 112.0
+margin_right = 547.054
+margin_bottom = 126.0
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Screen/Back"]
+margin_left = 604.054
+margin_top = 112.0
+margin_right = 644.054
+margin_bottom = 126.0
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sprite" type="Sprite" parent="Screen"]
-position = Vector2( -44.0972, -41.5774 )
+position = Vector2( 102.054, -62.996 )
+z_index = 2
 texture = ExtResource( 2 )
 
-[node name="Tweentoo2D" type="Tween" parent="Screen/Sprite"]
+[node name="Tweentoo" type="Tween" parent="Screen/Sprite"]
+script = ExtResource( 1 )
+transition = 7
+duration = 0.8
+
+[node name="Position2D" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+position = Vector2( 70.0536, 59.6964 )
+rotation = -0.523599
+
+[node name="Position2D2" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 193.054, 59.6964 )
+
+[node name="Position2D3" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+modulate = Color( 0.384314, 1, 0, 1 )
+position = Vector2( 302.054, 59.6964 )
+
+[node name="Position2D4" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+modulate = Color( 0, 0.462745, 1, 1 )
+position = Vector2( 407.054, 59.6964 )
+
+[node name="Position2D5" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+modulate = Color( 1, 0, 0.890196, 1 )
+position = Vector2( 510.054, 59.6964 )
+
+[node name="Position2D6" type="Position2D" parent="Screen/Sprite/Tweentoo"]
+position = Vector2( 607.054, 59.6964 )
+rotation = 0.523599
+
+[node name="Sprite2" type="Sprite" parent="Screen"]
+position = Vector2( 880, 65 )
+z_index = 2
+texture = ExtResource( 2 )
+
+[node name="Tweentoo" type="Tween" parent="Screen/Sprite2"]
 script = ExtResource( 1 )
 transition = 10
 duration_array = [ 1.0, 0.0 ]
 
-[node name="Position2D" type="Position2D" parent="Screen/Sprite/Tweentoo2D"]
-position = Vector2( 95.7539, 71.8155 )
+[node name="Position2D" type="Position2D" parent="Screen/Sprite2/Tweentoo"]
+position = Vector2( 880, 65 )
 
-[node name="Position2D2" type="Position2D" parent="Screen/Sprite/Tweentoo2D"]
-position = Vector2( 95.7539, 71.8155 )
+[node name="Position2D2" type="Position2D" parent="Screen/Sprite2/Tweentoo"]
+position = Vector2( 880, 65 )
 rotation = 6.28319
-
-[node name="Sprite2" type="Sprite" parent="Screen"]
-position = Vector2( 279.645, -39.6032 )
-texture = ExtResource( 2 )
-
-[node name="Tweentoo2D" type="Tween" parent="Screen/Sprite2"]
-script = ExtResource( 1 )
-transition = 10
-easing = 1
-
-[node name="Position2D" type="Position2D" parent="Screen/Sprite2/Tweentoo2D"]
-position = Vector2( 203.754, 72.8155 )
-
-[node name="Position2D2" type="Position2D" parent="Screen/Sprite2/Tweentoo2D"]
-position = Vector2( 267.808, 103.671 )
-rotation = 6.02352
-scale = Vector2( 1.44153, 2.01699 )
-
-[node name="Position2D3" type="Position2D" parent="Screen/Sprite2/Tweentoo2D"]
-position = Vector2( 337.808, 102.671 )
-rotation = 6.86732
-scale = Vector2( -1, 1 )
