@@ -75,13 +75,13 @@ func change() -> void:
 		if is_2D:
 			var pnode : Node2D = get_parent()
 			var cnode : Node2D = get_child(next_child())
-			if update_position and pnode.position != cnode.position:
+			if update_position:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "position", pnode.position, cnode.position, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
-			if update_rotation and pnode.rotation != cnode.rotation:
+			if update_rotation:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "rotation", pnode.rotation, cnode.rotation, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
-			if update_scale and pnode.scale != cnode.scale:
+			if update_scale:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "scale", pnode.scale, cnode.scale, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
 			if pnode.modulate != cnode.modulate:
@@ -93,13 +93,13 @@ func change() -> void:
 		else:
 			var pnode : Spatial = get_parent()
 			var cnode : Spatial = get_child(next_child())
-			if update_position and pnode.translation != cnode.translation:
+			if update_position:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "translation", pnode.translation, cnode.translation, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
-			if update_rotation and pnode.rotation_degrees != cnode.rotation_degrees:
+			if update_rotation:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "rotation_degrees", pnode.rotation_degrees, cnode.rotation_degrees, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
-			if update_scale and pnode.scale != cnode.scale:
+			if update_scale:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "scale", pnode.scale, cnode.scale, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
 		# warning-ignore:return_value_discarded
