@@ -72,9 +72,9 @@ func next_duration() -> int:
 func change() -> void:
 	is_changing = true
 	if get_child_count() != 0:
-		if is_2D:
-			var pnode : Node2D = get_parent()
-			var cnode : Node2D = get_child(next_child())
+		var pnode := get_parent()
+		var cnode := get_child(next_child())
+		if is_2D and pnode is Node2D and cnode is Node2D:
 			if update_position:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "position", pnode.position, cnode.position, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
@@ -90,9 +90,7 @@ func change() -> void:
 			if pnode.self_modulate != cnode.self_modulate:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "self_modulate", pnode.self_modulate, cnode.self_modulate, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
-		else:
-			var pnode : Spatial = get_parent()
-			var cnode : Spatial = get_child(next_child())
+		elif pnode is Spatial and cnode is Spatial:
 			if update_position:
 				# warning-ignore:return_value_discarded
 				interpolate_property(pnode, "translation", pnode.translation, cnode.translation, duration if duration_array.empty() else duration_array[current_duration], transition, easing)
@@ -109,7 +107,7 @@ func start_state() -> void:
 	current_child = -1
 	current_duration = 0
 
-func set_reversed_change(value : bool) -> void:
+func set_reversed_change(value: bool) -> void:
 	reversed_change = value
 	# warning-ignore:return_value_discarded
 	remove_all()
