@@ -1,157 +1,100 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Tweentoo.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
-[node name="Main" type="Spatial"]
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 900, 323, 45, -6, -45, 6, 789, 406, -7.84189, 26.6838, 7.84189, -26.6838, 717.081, 362.873, -19.8214, -2.83162, 19.8214, 2.83162, 758.612, 331.725, 10.449, -23.8419, -10.449, 23.8419, 780.321, 376.087, 69, 6, -69, -6, 644, 402, -16, 66, 16, -66, 539, 318, -55.6632, -12.4387, 55.6632, 12.4387, 630.245, 193.919, 29, -72, -29, 72, 634, 344, 1, -45, -1, 45, 539, 446, 0, 0, 0, 0, 595, 517 )
+}
+
+[node name="Main" type="Node"]
 
 [node name="Camera" type="Camera" parent="."]
 current = true
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, -9 )
+[node name="Box" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Tweentoo" type="Tween" parent="MeshInstance"]
+[node name="Tweentoo" type="Tween" parent="Box"]
+repeat = true
+playback/repeat = true
 script = ExtResource( 1 )
-reversed_change = true
-transition = 8
-easing = 1
-duration = 2.0
+autostart = true
+pingpong = true
+default_transition = 10
+array_duration = [ 1.0, 2.0 ]
 
-[node name="Position3D" type="Position3D" parent="MeshInstance/Tweentoo"]
-transform = Transform( -0.121159, 0, -0.992633, -0.906378, 0.407725, 0.110631, 0.404721, 0.913105, -0.0493996, -4, 0, -8 )
+[node name="Position3D" type="Position3D" parent="Box/Tweentoo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
 
-[node name="Position3D2" type="Position3D" parent="MeshInstance/Tweentoo"]
-transform = Transform( -0.717075, -0.651833, 0.246814, -0.58814, 1.89565, 3.29764, -0.680039, 0.576661, -0.452779, 0, -0.896904, -10.2697 )
+[node name="Position3D2" type="Position3D" parent="Box/Tweentoo"]
+transform = Transform( 1.15627, -0.42581, 0.473796, 0.72529, 0.87533, 0, -0.622092, 0.229093, 0.880635, -5, 3, -9 )
 
-[node name="Position3D3" type="Position3D" parent="MeshInstance/Tweentoo"]
-transform = Transform( 0.566003, 0, 0.824403, 0.812102, 0.172101, -0.557558, -0.141881, 0.985079, 0.0974098, 4, -2, -8 )
+[node name="Position3D3" type="Position3D" parent="Box/Tweentoo"]
+transform = Transform( -1.31793, -8.9407e-08, -0.477527, 0.589143, -0.853166, -0.722655, -0.407409, -1.23374, 0.499737, 4, 3, -9 )
 
-[node name="Screen" type="Node2D" parent="."]
-
-[node name="Back" type="Node" parent="Screen"]
-
-[node name="ColorRect" type="ColorRect" parent="Screen/Back"]
-margin_left = -14.0
-margin_top = -15.0
-margin_right = 1054.0
-margin_bottom = 145.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Screen/Back"]
-margin_left = 67.0536
-margin_top = 112.0
-margin_right = 107.054
-margin_bottom = 126.0
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Screen/Back"]
-margin_left = 190.054
-margin_top = 112.0
-margin_right = 230.054
-margin_bottom = 126.0
-text = "1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="Screen/Back"]
-margin_left = 299.054
-margin_top = 112.0
-margin_right = 339.054
-margin_bottom = 126.0
-text = "2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="Screen/Back"]
-margin_left = 404.054
-margin_top = 112.0
-margin_right = 444.054
-margin_bottom = 126.0
-text = "3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label5" type="Label" parent="Screen/Back"]
-margin_left = 507.054
-margin_top = 112.0
-margin_right = 547.054
-margin_bottom = 126.0
-text = "4"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label6" type="Label" parent="Screen/Back"]
-margin_left = 604.054
-margin_top = 112.0
-margin_right = 644.054
-margin_bottom = 126.0
-text = "5"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Screen"]
-position = Vector2( 102.054, -62.996 )
-z_index = 2
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -61.7361, 505.228 )
 texture = ExtResource( 2 )
 
-[node name="Tweentoo" type="Tween" parent="Screen/Sprite"]
+[node name="Tweentoo" type="Tween" parent="Sprite"]
+repeat = true
+playback/repeat = true
 script = ExtResource( 1 )
-transition = 7
-duration = 0.8
+autostart = true
+pingpong = true
+array_transition = [ 7, 6, 6, 8, 10 ]
 
-[node name="Position2D" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-position = Vector2( 70.0536, 59.6964 )
-rotation = -0.523599
+[node name="Position2D" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+position = Vector2( 58.4186, 459.136 )
 
-[node name="Position2D2" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 193.054, 59.6964 )
+[node name="Position2D2" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+modulate = Color( 0.862745, 0.372549, 0.945098, 1 )
+position = Vector2( 268.718, 459.136 )
 
-[node name="Position2D3" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-modulate = Color( 0.384314, 1, 0, 1 )
-position = Vector2( 302.054, 59.6964 )
+[node name="Position2D3" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+modulate = Color( 0.443137, 0.92549, 0.290196, 1 )
+position = Vector2( 268.718, 553.889 )
 
-[node name="Position2D4" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-modulate = Color( 0, 0.462745, 1, 1 )
-position = Vector2( 407.054, 59.6964 )
+[node name="Position2D4" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+modulate = Color( 0.858824, 0.847059, 0.152941, 1 )
+position = Vector2( 169.723, 553.889 )
 
-[node name="Position2D5" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-modulate = Color( 1, 0, 0.890196, 1 )
-position = Vector2( 510.054, 59.6964 )
+[node name="Position2D5" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+modulate = Color( 0.898039, 0.533333, 0.290196, 1 )
+position = Vector2( 169.723, 364.384 )
+rotation = 3.14159
 
-[node name="Position2D6" type="Position2D" parent="Screen/Sprite/Tweentoo"]
-position = Vector2( 607.054, 59.6964 )
-rotation = 0.523599
+[node name="Position2D6" type="Position2D" parent="Sprite/Tweentoo"]
+visible = false
+modulate = Color( 0.360784, 0.866667, 0.819608, 1 )
+position = Vector2( 365.96, 364.384 )
+scale = Vector2( 2, 2 )
 
-[node name="Sprite2" type="Sprite" parent="Screen"]
-position = Vector2( 880, 65 )
-z_index = 2
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1088.12, 506.602 )
 texture = ExtResource( 2 )
 
-[node name="Tweentoo" type="Tween" parent="Screen/Sprite2"]
+[node name="Tweentoo" type="Tween" parent="Sprite2"]
+repeat = true
+playback_speed = 4.0
+playback/repeat = true
+playback/speed = 4.0
 script = ExtResource( 1 )
-transition = 10
-duration_array = [ 1.0, 0.0 ]
+autostart = true
+pingpong = true
+default_duration = 0.1
 
-[node name="Position2D" type="Position2D" parent="Screen/Sprite2/Tweentoo"]
-position = Vector2( 880, 65 )
-
-[node name="Position2D2" type="Position2D" parent="Screen/Sprite2/Tweentoo"]
-position = Vector2( 880, 65 )
-rotation = 6.28319
+[node name="Path2D" type="Path2D" parent="Sprite2/Tweentoo"]
+visible = false
+curve = SubResource( 2 )
