@@ -14,11 +14,11 @@ You can watch a video about Tweentoo here: https://youtu.be/79pTFbRVaZI
 ---
 
 # Main methods
-1. tween_property(py_name, initial_val, final_val)
-2. tween_property_with_node(py_name, initial_node: Node, final_node)
-3. tween_property_with_child(py_name, initial_cid, final_cid)
-4. tween_position_with_curve(curve)
-5. tween_prs()
+- tween_property(py_name, initial_val, final_val)
+- tween_property_with_node(py_name, initial_node: Node, final_node)
+- tween_property_with_child(py_name, initial_cid, final_cid)
+- tween_position_with_curve(curve)
+- tween_prs()
 
 ---
 
