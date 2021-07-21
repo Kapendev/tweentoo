@@ -23,7 +23,7 @@ You can watch a video about Tweentoo here: https://youtu.be/79pTFbRVaZI
 ---
 
 # Extra
-You can also change the modulate and self_modulate property of Node2D/Control nodes.
-If autostart is true and the first child is a Path2D/Path with a curve resource, tween_position_with_curve() will run.
-To repeat a tween, just set the repeat property to true.
+You can also change the modulate and self_modulate property of Node2D/Control nodes.<br/>
+If autostart is true and the first child is a Path2D/Path with a curve resource, tween_position_with_curve() will run.<br/>
+To repeat a tween, just set the repeat property to true.<br/>
 
